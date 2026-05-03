@@ -950,41 +950,114 @@ body {
     }
 }
 
-@media (max-width: 768px) {
-    /* 1. Allow the navbar to grow vertically instead of cutting horizontally */
+/* ADVANCED MOBILE NAVIGATION FIX */
+@media screen and (max-width: 768px) {
+    header {
+        /* Reset positioning to prevent the 'bubble' oval shape */
+        width: 94% !important;
+        left: 3% !important;
+        transform: none !important;
+        top: 10px !important;
+        
+        /* Change shape to a sleek card */
+        border-radius: 20px !important;
+        height: auto !important;
+        min-height: unset !important;
+        padding: 15px 0 !important;
+        
+        /* Ensure background doesn't clip */
+        display: block !important;
+        overflow: hidden !important;
+    }
+
     .navbar {
-        flex-wrap: wrap; 
-        justify-content: center; /* Centers everything for a balanced look */
-        padding: 15px;
-        height: auto; /* Important: removes fixed heights that cause clipping */
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 12px !important;
+        padding: 0 15px !important;
     }
 
-    /* 2. Make the logo take up the full width so it's centered */
     .logo {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 10px;
-        font-size: 1.1rem;
+        font-size: 1.1rem !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: auto !important;
     }
 
-    /* 3. Let the links wrap so they don't push the button off-screen */
     .nav-links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 8px;
-        margin-bottom: 10px;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 10px !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
-    .nav-link {
-        font-size: 0.85rem; /* Smaller text for mobile accessibility */
-        padding: 5px 8px;
+    .nav-links li {
+        margin: 0 !important;
     }
 
-    /* 4. Ensure the Let's Talk button is centered and visible */
-    .btn-lets-talk {
-        margin: 0 auto;
-        font-size: 0.9rem;
-        padding: 8px 16px;
+    .nav-links li a {
+        font-size: 0.8rem !important;
+        margin: 0 5px !important;
+        padding: 4px 8px !important;
+        white-space: nowrap !important;
+    }
+
+    .nav-btn {
+        width: 100% !important;
+        max-width: 180px !important;
+        margin: 5px 0 0 0 !important;
+        padding: 10px 15px !important;
+        font-size: 0.85rem !important;
+        border-radius: 50px !important;
+        display: flex !important;
+        justify-content: center !important;
     }
 }
+
+/* Optimized Mobile Responsive Hero Section */
+@media (max-width: 768px) {
+    .hero { 
+        height: auto; /* Allow the section to expand with content */
+        min-height: 100vh; /* Ensure it still covers at least the full screen */
+        padding: 120px 20px 60px; /* Extra top padding for your floating navbar */
+        flex-direction: column; /* Stack text and image vertically */
+    }
+
+    .hero h1 { 
+        font-size: 2.2rem; /* Significantly smaller font to prevent text wrapping issues */
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+
+    .hero-subtext { 
+        font-size: 0.95rem; 
+        margin-bottom: 2rem;
+        padding: 0 10px; /* Prevent text from touching screen edges */
+    }
+
+    .hero-btns { 
+        flex-direction: column; 
+        gap: 1rem; 
+        width: 100%;
+    }
+
+    .btn-view-work {
+        width: 100%; /* Full-width buttons are easier to tap on mobile */
+        justify-content: center;
+    }
+
+    .image-glass-frame {
+        width: 100%;
+        max-width: 300px; /* Prevent the image from becoming too large */
+        margin-top: 40px;
+    }
+    
+    .floating-deco { 
+        display: none; /* Hide background icons on mobile to reduce visual clutter */
+    }
+}
+
