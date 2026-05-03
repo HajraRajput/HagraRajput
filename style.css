@@ -1061,3 +1061,104 @@ body {
     }
 }
 
+/* Align badge exactly with the 'I Build Brands' text */
+.badge-wrapper {
+    display: flex !important;
+    justify-content: flex-start !important; /* Keeps anchor to the left */
+    width: 100% !important;
+    margin-bottom: 20px !important;
+    /* This pushes the badge slightly to the right to align with your text */
+    padding-left: 19% !important; 
+}
+.premium-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background: rgba(139, 94, 60, 0.1) !important;
+    border: 1px solid rgba(139, 94, 60, 0.4) !important;
+    color: #fff !important;
+    padding: 8px 20px !important;
+    border-radius: 100px !important;
+    font-size: 12px !important;
+    letter-spacing: 1.2px !important;
+    text-transform: uppercase !important;
+    font-weight: 600 !important;
+    white-space: nowrap !important;
+    animation: pulseGlow 3s infinite;
+}
+
+/* Updated Animation to be more subtle */
+@keyframes pulseGlow {
+    0%, 100% { 
+        border-color: rgba(139, 94, 60, 0.4); 
+        box-shadow: 0 0 15px rgba(139, 94, 60, 0.1); 
+    }
+    50% { 
+        border-color: rgba(244, 63, 94, 0.6); 
+        box-shadow: 0 0 25px rgba(244, 63, 94, 0.3); 
+    }
+}
+
+@media (max-width: 768px) {
+    .badge-wrapper {
+        justify-content: center !important;
+        padding: 0 15px !important; /* Forces space between badge and screen walls */
+        width: 100% !important;
+    }
+
+    .premium-badge {
+        /* Shrinking everything to fit narrow screens */
+        font-size: 8px !important; 
+        padding: 4px 12px !important;
+        letter-spacing: 0.5px !important;
+        
+        /* Ensures it never touches the screen edges */
+        max-width: 90% !important; 
+        display: inline-flex !important;
+        justify-content: center !important;
+        white-space: nowrap !important;
+    }
+
+    .premium-badge i {
+        font-size: 9px !important; /* Shrinks the crown icon too */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        /* Increase this value if the badge is still slightly hidden */
+        padding-top: 180px !important; 
+    }
+
+    .hero-content {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .badge-wrapper {
+        /* Reset any side padding so it centers perfectly under the navbar */
+        padding-left: 0 !important; 
+        justify-content: center !important;
+        margin-top: 20px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-btns {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        padding: 0 20px !important; /* Creates the side gap from the screen edges */
+    }
+
+    .btn-view-work {
+        width: auto !important; /* Stops it from stretching to full width */
+        min-width: 200px !important; /* Keeps a nice clickable size */
+        padding: 12px 25px !important; /* Smaller padding inside the button */
+        font-size: 0.9rem !important; /* Smaller text */
+        border-radius: 50px !important;
+        justify-content: center !important;
+    }
+}
